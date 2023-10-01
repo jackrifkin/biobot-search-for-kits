@@ -27,7 +27,10 @@ app.use(cors());
 app.post('/get-kit-info', async (request, response) => {
     try {
         const label_id = request.body.label_id;
-        const data = await KitModel.findOne({ label_id });
+        const regexPattern = new RegExp(`^${label_id}`);
+
+        const data = await KitModel.find({ label_id: regexPattern }).limit(5);
+
         response.json(data);
     } catch (e) {
         console.error(e);
