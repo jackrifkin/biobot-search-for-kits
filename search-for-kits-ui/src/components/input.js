@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './input.css';
 
-function Input() {
+function Input({updateResponse}) {
   const [input, setInput] = useState('');
   
   const handleInputChange = (e) => {
@@ -19,6 +18,7 @@ function Input() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        updateResponse(data[0]);
       })
       .catch((error) => {
         console.error('Error:', error);

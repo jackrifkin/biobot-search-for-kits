@@ -1,11 +1,11 @@
 import './App.css';
-import Input from './components/input.js';
+import Search from './components/search.js';
 
 function App() {
   return (
     <div className="App">
       <h1>Search for Biobot Kits</h1>
-      <Input />
+      <Search />
     </div>
   );
 }
