@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './input.css';
 
 function Input() {
   const [input, setInput] = useState('');
@@ -25,7 +26,7 @@ function Input() {
   };
   
   return (
-    <div>
+    <div className='input-container'>
       <input
         type="text"
         placeholder="Enter label ID:"
